@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/realglobe-Inc/pon-task-seed#readme",
   "dependencies": {
+    "asleep": "^1.0.3",
     "co": "^4.6.0"
   },
   "devDependencies": {
