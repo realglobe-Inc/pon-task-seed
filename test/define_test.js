@@ -25,7 +25,7 @@ describe('define', function () {
     let db = theDB({})
     let ctx = ponContext()
     let pattern = `${__dirname}/../misc/mocks/:env/*.seed.json`
-    let task = define(db, pattern)
+    let task = define(() => db, pattern)
     ok(task)
 
     yield Promise.resolve(task(ctx))
