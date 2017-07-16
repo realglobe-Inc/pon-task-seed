@@ -1,6 +1,6 @@
 {
   "name": "pon-task-seed",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Pon task to generate data seed",
   "main": "lib",
   "browser": "shim/browser",
