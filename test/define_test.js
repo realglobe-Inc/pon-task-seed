@@ -21,10 +21,10 @@ describe('define', function () {
   })
 
   it('Define', async () => {
-    let db = theDB({})
-    let ctx = ponContext()
-    let pattern = `${__dirname}/../misc/mocks/:env/*.seed.json`
-    let task = define(() => db, pattern)
+    const db = theDB({})
+    const ctx = ponContext()
+    const pattern = `${__dirname}/../misc/mocks/:env/*.seed.json`
+    const task = define(() => db, pattern)
     ok(task)
 
     await Promise.resolve(task(ctx))
