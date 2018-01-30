@@ -26,22 +26,21 @@
     "asleep": "^1.0.3"
   },
   "devDependencies": {
-    "ababel": "^3.0.2",
-    "ababel-es2015": "^2.0.1",
-    "amocha": "^4.0.0",
+    "ababel": "^4.0.6",
+    "amocha": "^5.0.0",
     "ape-doc": "^2.0.4",
     "ape-formatting": "^1.0.2",
     "ape-releasing": "^4.0.4",
     "ape-tasking": "^4.0.9",
-    "ape-tmpl": "^6.0.6",
+    "ape-tmpl": "^6.0.8",
     "ape-updating": "^4.1.0",
     "coz": "^6.0.20",
-    "eslint": "^4.15.0",
+    "eslint": "^4.16.0",
     "injectmock": "^2.0.0",
     "pon-context": "^2.0.1",
     "pon-doc": "^2.0.1",
     "sugos-travis": "^2.0.7",
-    "the-db": "^9.0.7"
+    "the-db": "^9.0.8"
   },
   "engines": {
     "node": ">=7.6",
