@@ -2,17 +2,18 @@ language: node_js
 node_js:
 - '8'
 before_install:
- - npm i npm-cli-login -g
- - npm-cli-login -u "${NPM_USER}" -p "${NPM_PASSWORD}" -e "${NPM_EMAIL}"
- - npm who
+- echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+- npm install jsdoc publish-if-needed npm@latest -g
 install:
 - npm install jsdoc -g
 - npm install
 script:
-- ./ci/build.js
-- ./ci/shim.js
-- ./ci/test.js
+- "./ci/build.js"
+- "./ci/shim.js"
+- "./ci/test.js"
 after_success:
-- ./ci/travis/publish.js
+- publish-if-needed
 env:
-  secure: "I6UJw0YaAlzET/Nk63JbJV1jAsmp9FteER/O73fV0UEzx01LjKJ/jw09zkosiduHqxSVw6rkMpY0dlZgAUkuIvohBkzVfCGDiXDBdv0oQ3/AKZ7frlkU6liAjfg5SFUjZGxcdWBwEIOLXy6Hwb32zMDJ1UJcN2nWFQh/oy02L5z9yj287IAVd/48bqkIa6vlE8iFmWrs0ozktW6ozbE/Qceq4NaqlLqvxtc7R6zP8pyX8ijB0xBdP/a7fwjMaU5x+vn3BfaQImHoST3Akm6gmgB1Nv3VYs8M86QXlj+UbAYzdERucBQp8zN4+FVy8mbHjKRyKrl0jwEovgvf2cn1qFNfRFiI3Lz3E1Un3NiscYqJVuMyLznsGu3SnPNnmmQ5039WSPyh+hw3Z4KdZLl60ruyL7bEu0x5XUEjRDd9SBj/72MBtEvS4UrMZ7Jddv+wmyUEfZbFTSxWChHS5AA3tv0RsUE7hWp8mEGAnEd/RX7X8QvzMRQ7d6TfNBodOyCWawpf3RPk3u69uwkku75UOncHv9pm5yPZGLNg3ue0ZIUv6A42UF3e6r3mRvrt7CeyZ42tQbftVqU9YzFFAIP7qSBMGq20mc999ceiDwuabx9XnpXZLWMpRAP8fLA45Xj5/iSUBfWLk3oLmd2N4iZbkJk+NAANWI3iJO+cDDw7Ocs="
+  global:
+  - secure: Xlh+lYs1bbTZNInSPKN4tu3dpcrOcMbAdakHbexbItMX1zc0W+uhnWtzZz+xPxi7z03Wy+cQqNndXbxy7ijF1ymfYnBzdbdnQ4I3Ua1lxu5+54No8wicvX0rJcEare87kgkQUAfKBAT+htEdPY/4KAHcAQlr3/bSQqa4sLznYuBGMPKQs650Y82oXsVVeMWbIJrrDZDseymx2v8U1UXpGwgBL2rhrqfQ/0VJUHiGsV8z3BfzxnywNb45KoH6x7Y4wPUgq+rGBqrfz73DLLd/NtGEfsh4OGWYbZJFLy3vH/dh06hC2hVw6bzPvIFCAd3snvwPHEQTQXu++7gHDikHeIfEsNOJFaOP2RYu43a/tIh2IKOcuT3vAAXDHSJS0zJ5jgZVYPUyxde+UTi3n9EI2lJaIPHa2K3k82mCJtti55lsxMuegm0rvojg4iVtMNxBXO2qhKzdwOP9DQMZ+cprai6Vd3Jv72t2Z8faBW7CEdnTepYIjt7EJ8yKFqLGRLRqze8aFwqy4X3tADi20ir9Wvs0xchoInvVM7J0k8PDPDcuZ/YmVjBBvks6xJgkr7Iuai04vcD2GwkJoPXbxh0ZxgI3deBlWdiavPwz6KgMvckkL1wbIMALgyNup0t0Z0YHVRCv5YuUcjtCZfTvPyfQbPhc0/0lZNFQND60s/3Lzm8=
+  - secure: F+jBNMo+BNXceIFXx2XXq7rAm6gSwInPDEP8xXDTGLfcATXg2ZAiDQGkU5Cfla5Vf18r/rQ0XywOwWG5XmxAz98u/EiUPOgA+VLrMZjUwCLGGItoA+adrNFXdpsD2aIStNlt6pLR+dTPDeiJohlAMDAz3ZWiPRdF5iZKt2WV/gVKpehabRkQdtdoDuFq2DKrPCgcwWxjbM0sg7y+TVc2XOoDoT0jaDWKydhlpC/HIRixvvWfC7SnBoGiet3Z6WExcTle8Gt6r3KAVVc7WH1bsiH/pzAcmh42VI3aS/cY2D3VFyHTqQduhge0bCCIcMzsmPPre3ycsQjM80Sq5tjU1PyN6r+kmpFLAXr6ylnU2F5V6VhCA+yOhdX6+vWPzcDRg1zDoThJv4HYtHjKvTAE+KWEEULauYJ5DpPq0KLGn1IjTo29ZqJpTvjKGyst0tvedTXr6obEAK3lc3eGI0TEL9vF/Q74fAs77CDA7DIyYcxT2IiRM4W6x94BphXaeE4/M/lx2ES8HM9sKtzG5lbMPenok1+UbHdbUQLPLcIpurRArvlvpP772Wrxo5txksmvc2j2N9nXaP6ChdlRI+j4OsMxw9ySBei+aH56Nn016/FPaxXxFxue2vaXjd5dXawzPvWr5hFiZFLe8smtCj8usx+WdtWKS4XgmtZwlZpO/+g=

@@ -1,6 +1,6 @@
 {
   "name": "pon-task-seed",
-  "version": "2.0.16",
+  "version": "3.0.0",
   "description": "Pon task to generate data seed",
   "main": "lib",
   "browser": "shim/browser",
@@ -26,6 +26,7 @@
     "asleep": "^1.0.3"
   },
   "devDependencies": {
+    "@the-/db": "^18.2.1",
     "ababel": "^5.0.3",
     "amocha": "^5.0.0",
     "ape-doc": "^2.0.4",
@@ -39,11 +40,10 @@
     "injectmock": "^2.0.0",
     "pon-context": "^3.0.2",
     "pon-doc": "^2.0.1",
-    "sugos-travis": "^2.0.7",
-    "the-db": "^9.5.22"
+    "sugos-travis": "^2.0.7"
   },
   "engines": {
-    "node": ">=7.6",
-    "npm": ">=4"
+    "node": ">=10",
+    "npm": ">=5"
   }
 }
