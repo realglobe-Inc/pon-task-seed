@@ -5,7 +5,7 @@
 'use strict'
 
 const define = require('../lib/define.js')
-const theDB = require('@the/-db')
+const theDB = require('@the-/db')
 const ponContext = require('pon-context')
 const {ok} = require('assert')
 
